@@ -1,3 +1,5 @@
 # Scripts
 
-trainig in text editing
+trainig in programming
+
+
