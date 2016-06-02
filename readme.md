@@ -1,5 +1,5 @@
 # Scripts
 
-trainig in programming
+training in programming
 
 
