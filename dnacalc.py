@@ -6,3 +6,7 @@ DNAseq = 'ATGAAC'
 
 print( 'Sequence ' + DNAseq )
 
+SeqLength = len( DNAseq )
+
+print( SeqLength )
+
