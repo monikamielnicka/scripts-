@@ -2,27 +2,48 @@
 
 # This is a comment
 
-DNAseq = 'ATGAAC'
+#DNAseq = raw_input ( "Enter a DNA sequence" ).upper()
+#DNAseq = DNAseq.upper ()
 
-print( 'Sequence ' + DNAseq )
+DNAseq='AATGGGGCCCGTAACGTACA'
 
-SeqLength = float (len( DNAseq ))
+print('Sequence ' + DNAseq )
 
-print( 'Length is ' + str(SeqLength) )
+SeqLength =float(len( DNAseq ))
 
-NumberA = DNAseq.count('A')
+print('Length is ' + str(SeqLength) )
 
-NumberT = DNAseq.count('T')
 
-NumberC = DNAseq.count('C')
+NumberA= DNAseq.count ('A')
 
-NumberG = DNAseq.count('G')
+NumberT= DNAseq.count ('T')
 
-print('A: ' + str( NumberA / SeqLength ) )
+NumberC= DNAseq.count ('C')
 
-print('T: ' + str( NumberT / SeqLength ) )
+NumberG= DNAseq.count ('G')
 
-print('C: ' + str( NumberC / SeqLength ) )
 
-print('G: ' + str( NumberG / SeqLength ) )
+print('A:{:.2}'.format(NumberA / SeqLength))
 
+print('T:{:.2}'.format(NumberT / SeqLength))
+
+print('C:{:.2}'.format(NumberC / SeqLength))
+
+print('G:{:.2}'.format(NumberG / SeqLength))
+
+TotalStrong=NumberG + NumberC
+TotalWeak=NumberA + NumberT
+
+if SeqLength>=14:
+	MeltTemp=64.9 + 41 * (TotalStrong - 16.4) / SeqLength 
+	print('using long formula')
+
+else: 
+	
+	MeltTemp=(4*TotalStrong)+(2*TotalWeak)
+	print('using short formula')
+
+print('Melting temp: {}'.format(MeltTemp))
+	
+
+print('Done.')
