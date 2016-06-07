@@ -13,26 +13,29 @@ SeqLength =float(len( DNAseq ))
 
 print('Length is ' + str(SeqLength) )
 
-
-NumberA= DNAseq.count ('A')
-
-NumberT= DNAseq.count ('T')
-
-NumberC= DNAseq.count ('C')
-
-NumberG= DNAseq.count ('G')
+#for bases in Bases
+TotalStrong=0
+TotalWeak=0
 
 
-print('A:{:.2}'.format(NumberA / SeqLength))
+Bases='AGTC'
+for base in Bases:
+	frequency=(DNAseq.count (base)) / SeqLength
+	print( '{}: {:.2}'.format (base, frequency))
+	
+for base in DNAseq:
+	if base in 'CG':
+		TotalStrong=TotalStrong+1
+	else:
+		TotalWeak=TotalWeak+1
+		
 
-print('T:{:.2}'.format(NumberT / SeqLength))
+print (TotalStrong, TotalWeak)
 
-print('C:{:.2}'.format(NumberC / SeqLength))
-
-print('G:{:.2}'.format(NumberG / SeqLength))
-
-TotalStrong=NumberG + NumberC
-TotalWeak=NumberA + NumberT
+Counts = dict ()
+for base in Bases
+	Count = DNAseq.count (base)
+	Counts[base] = Counts
 
 if SeqLength>=14:
 	MeltTemp=64.9 + 41 * (TotalStrong - 16.4) / SeqLength 
